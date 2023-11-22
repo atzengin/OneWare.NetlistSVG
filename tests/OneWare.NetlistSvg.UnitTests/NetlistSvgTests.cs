@@ -1,7 +1,4 @@
-﻿using System.Threading.Tasks;
-using OneWare.Shared.Services;
-using Prism.Ioc;
-using Xunit;
+﻿using Xunit;
 
 namespace OneWare.NetlistSvg.UnitTests;
 

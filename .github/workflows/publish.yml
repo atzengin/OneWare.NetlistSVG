@@ -26,9 +26,9 @@ jobs:
       uses: kzrnm/get-net-sdk-project-versions-action@v1.3.0
       id: get-version
       with:
-        proj-path: src/OneWare.NetListSvgIntegration/OneWare.NetListSvgIntegration.csproj
+        proj-path: src/OneWare.NetlistSvg/OneWare.NetlistSvg.csproj
     - name: Build ${{ matrix.target }}
-      run: dotnet build src/OneWare.NetListSvgIntegration/OneWare.NetListSvgIntegration.csproj -c Release -r ${{ matrix.target }} -o publish
+      run: dotnet build src/OneWare.NetlistSvg/OneWare.NetlistSvg.csproj -c Release -r ${{ matrix.target }} -o publish
     - name: Compress ${{ matrix.target }}
       uses: thedoctor0/zip-release@0.7.1
       with:
@@ -53,7 +53,7 @@ jobs:
         uses: kzrnm/get-net-sdk-project-versions-action@v1.3.0
         id: get-version
         with:
-          proj-path: src/OneWare.NetListSvgIntegration/OneWare.NetListSvgIntegration.csproj
+          proj-path: src/OneWare.NetlistSvg/OneWare.NetlistSvg.csproj
       - uses: actions/download-artifact@v3
         with:
           path: ./artifacts

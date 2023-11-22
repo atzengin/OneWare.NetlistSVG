@@ -1,22 +1,22 @@
 ﻿using CommunityToolkit.Mvvm.Input;
-using OneWare.NetListSvgIntegration.Services;
+using OneWare.NetlistSvg.Services;
 using OneWare.Shared.Models;
 using OneWare.Shared.Services;
 using Prism.Ioc;
 using Prism.Modularity;
 
-namespace OneWare.NetListSvgIntegration;
+namespace OneWare.NetlistSvg;
 
-public class NetListSvgIntegrationModule : IModule
+public class NetlistSvgModule : IModule
 {
     public void RegisterTypes(IContainerRegistry containerRegistry)
     {
-        containerRegistry.RegisterSingleton<NetListSvgService>();
+        containerRegistry.RegisterSingleton<NetlistSvgService>();
     }
 
     public void OnInitialized(IContainerProvider containerProvider)
     {
-        var netListSvgService = containerProvider.Resolve<NetListSvgService>();
+        var netListSvgService = containerProvider.Resolve<NetlistSvgService>();
         
         containerProvider.Resolve<IProjectExplorerService>().RegisterConstructContextMenu(x =>
         {
@@ -24,9 +24,9 @@ public class NetListSvgIntegrationModule : IModule
             {
                 return new[]
                 {
-                    new MenuItemModel("NetListSvg")
+                    new MenuItemModel("NetlistSvg")
                     {
-                        Header = "NetListSvg",
+                        Header = "NetlistSvg",
                         Command = new AsyncRelayCommand(() => netListSvgService.ShowSchemeAsync(json))
                     }
                 };

@@ -1,12 +1,11 @@
 ﻿using System.Threading.Tasks;
-using OneWare.NetListSvgIntegration.Services;
 using OneWare.Shared.Services;
 using Prism.Ioc;
 using Xunit;
 
-namespace OneWare.NetListSvgIntegration.UnitTests;
+namespace OneWare.NetlistSvg.UnitTests;
 
-public class NetListSvgTests
+public class NetlistSvgTests
 {
     [Fact]
     public void LoadLibrary()

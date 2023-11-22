@@ -10,9 +10,9 @@ using OneWare.Shared.Models;
 using OneWare.Shared.Services;
 using Color = Avalonia.Media.Color;
 
-namespace OneWare.NetListSvgIntegration.Services;
+namespace OneWare.NetlistSvg.Services;
 
-public class NetListSvgService
+public class NetlistSvgService
 {
     private readonly ILogger _logger;
     private readonly IActive _active;
@@ -21,7 +21,7 @@ public class NetListSvgService
     private Script? _script1;
     private Script? _script2;
     
-    public NetListSvgService(ILogger logger, IActive active, IDockService dockService)
+    public NetlistSvgService(ILogger logger, IActive active, IDockService dockService)
     {
         _logger = logger;
         _active = active;
@@ -32,8 +32,8 @@ public class NetListSvgService
 
     private async Task LoadScriptsAsync()
     {
-        var script1 = GetAvaloniaAsset("avares://OneWare.NetListSvgIntegration/Assets/elk.bundled.js");
-        var script2 = GetAvaloniaAsset("avares://OneWare.NetListSvgIntegration/Assets/netlistsvg.bundle.js");
+        var script1 = GetAvaloniaAsset("avares://OneWare.NetlistSvg/Assets/elk.bundled.js");
+        var script2 = GetAvaloniaAsset("avares://OneWare.NetlistSvg/Assets/netlistsvg.bundle.js");
 
         var result = await Task.Run(() =>
         {
@@ -164,11 +164,11 @@ public class NetListSvgService
     {
         if (themeVariant == ThemeVariant.Light)
         {
-            return GetAvaloniaAsset("avares://OneWare.NetListSvgIntegration/Assets/theme_light.svg");
+            return GetAvaloniaAsset("avares://OneWare.NetlistSvg/Assets/theme_light.svg");
         }
         else
         {
-            return GetAvaloniaAsset("avares://OneWare.NetListSvgIntegration/Assets/theme_dark.svg");
+            return GetAvaloniaAsset("avares://OneWare.NetlistSvg/Assets/theme_dark.svg");
         }
     }
 }

@@ -4,7 +4,7 @@
   "id": "NetlistSvgModule",
   "description": "NetlistSVG Integration for OneWare",
   "license": "MIT",
-  "iconUrl": "",
+  "iconUrl": "https://raw.githubusercontent.com/ProtopSolutions/OneWare.NetlistSVG/main/logo.png",
   "tabs": [
     {
       "title": "Readme",

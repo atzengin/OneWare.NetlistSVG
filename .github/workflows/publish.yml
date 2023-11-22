@@ -1,13 +1,10 @@
-# This workflow will build a .NET project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
-
-name: Build
+name: Publish
 
 on:
-  workflow_dispatch: # Allow running the workflow manually from the GitHub UI
+  workflow_dispatch:
   release:
     types:
-      - published    # Run the workflow when a new GitHub release is published
+      - published 
 
 jobs:
   build:
@@ -65,4 +62,3 @@ jobs:
           artifacts: "artifacts/**/*.zip"
           tag: ${{steps.get-version.outputs.version}}
           allowUpdates: true
-          

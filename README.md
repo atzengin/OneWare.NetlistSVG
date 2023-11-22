@@ -1,4 +1,4 @@
-# OneWare.GhdlExtension
+# OneWare.NetlistSVG Extension
 
 [NetlistSVG](https://github.com/nturley/netlistsvg) Integration for OneWare Studio.
 

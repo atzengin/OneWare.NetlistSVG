@@ -26,7 +26,7 @@ public class NetlistSvgModule : IModule
                 {
                     new MenuItemModel("NetlistSvg")
                     {
-                        Header = "NetlistSvg",
+                        Header = "Convert to SVG",
                         Command = new AsyncRelayCommand(() => netListSvgService.ShowSchemeAsync(json))
                     }
                 };

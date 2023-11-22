@@ -29,21 +29,21 @@ jobs:
       uses: kzrnm/get-net-sdk-project-versions-action@v1.3.0
       id: get-version
       with:
-        proj-path: OneWare.Ghdl/OneWare.Ghdl.csproj
+        proj-path: src/OneWare.NetListSvgIntegration/OneWare.NetListSvgIntegration.csproj
     - name: Build ${{ matrix.target }}
-      run: dotnet build OneWare.Ghdl/OneWare.Ghdl.csproj -c Release -r ${{ matrix.target }} -o publish
+      run: dotnet build src/OneWare.NetListSvgIntegration/OneWare.NetListSvgIntegration.csproj -c Release -r ${{ matrix.target }} -o publish
     - name: Compress ${{ matrix.target }}
       uses: thedoctor0/zip-release@0.7.1
       with:
         type: 'zip'
-        filename: ../OneWare_GhdlExtension_${{steps.get-version.outputs.version}}_${{ matrix.target }}.zip
+        filename: ../OneWare_NetlistSvgExtension_${{steps.get-version.outputs.version}}_${{ matrix.target }}.zip
         directory: ./publish
     - uses: actions/upload-artifact@v3
       with:
-        name: OneWare_GhdlExtension_${{ matrix.target }}
+        name: OneWare_NetlistSvgExtension_${{ matrix.target }}
         if-no-files-found: error
         retention-days: 5
-        path: ./OneWare_GhdlExtension_${{steps.get-version.outputs.version}}_${{ matrix.target }}.zip
+        path: ./OneWare_NetlistSvgExtension_${{steps.get-version.outputs.version}}_${{ matrix.target }}.zip
         
   release:
     runs-on: ubuntu-latest
@@ -56,7 +56,7 @@ jobs:
         uses: kzrnm/get-net-sdk-project-versions-action@v1.3.0
         id: get-version
         with:
-          proj-path: OneWare.Ghdl/OneWare.Ghdl.csproj
+          proj-path: src/OneWare.NetListSvgIntegration/OneWare.NetListSvgIntegration.csproj
       - uses: actions/download-artifact@v3
         with:
           path: ./artifacts

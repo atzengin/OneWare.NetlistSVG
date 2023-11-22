@@ -34,19 +34,19 @@
       "targets": [
         {
           "target": "win-x64",
-          "url": "https://github.com/ProtopSolutions/OneWare.NetlistSVG/releases/download/0.12.0.7/OneWare_GhdlExtension_0.12.0.7_win-x64.zip"
+          "url": "https://github.com/ProtopSolutions/OneWare.NetlistSVG/releases/download/0.12.0.7/OneWare_NetlistSVGExtension_0.12.0.7_win-x64.zip"
         },
         {
           "target": "linux-x64",
-          "url": "https://github.com/ProtopSolutions/OneWare.NetlistSVG/releases/download/0.12.0.7/OneWare_GhdlExtension_0.12.0.7_linux-x64.zip"
+          "url": "https://github.com/ProtopSolutions/OneWare.NetlistSVG/releases/download/0.12.0.7/OneWare_NetlistSVGExtension_0.12.0.7_linux-x64.zip"
         },
         {
           "target": "osx-x64",
-          "url": "https://github.com/ProtopSolutions/OneWare.NetlistSVG/releases/download/0.12.0.7/OneWare_GhdlExtension_0.12.0.7_osx-x64.zip"
+          "url": "https://github.com/ProtopSolutions/OneWare.NetlistSVG/releases/download/0.12.0.7/OneWare_NetlistSVGExtension_0.12.0.7_osx-x64.zip"
         },
         {
           "target": "osx-arm64",
-          "url": "https://github.com/ProtopSolutions/OneWare.NetlistSVG/releases/download/0.12.0.7/OneWare_GhdlExtension_0.12.0.7_osx-arm64.zip"
+          "url": "https://github.com/ProtopSolutions/OneWare.NetlistSVG/releases/download/0.12.0.7/OneWare_NetlistSVGExtension_0.12.0.7_osx-arm64.zip"
         }
       ]
     }

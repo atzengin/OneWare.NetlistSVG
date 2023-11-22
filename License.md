@@ -1,6 +1,6 @@
 ### NetlistSVG License
 
-[GNU GPLv2](https://ghdl.github.io/ghdl/licenses.html)
+[MIT](https://github.com/nturley/netlistsvg/blob/master/LICENSE)
 
 ### Extension License
 

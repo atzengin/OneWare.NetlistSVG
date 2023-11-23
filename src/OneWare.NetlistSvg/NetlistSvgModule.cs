@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using OneWare.NetlistSvg.Services;
-using OneWare.Shared.Models;
-using OneWare.Shared.Services;
+using OneWare.SDK.Models;
+using OneWare.SDK.Services;
 using Prism.Ioc;
 using Prism.Modularity;
 

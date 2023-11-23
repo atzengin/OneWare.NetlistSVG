@@ -5,9 +5,9 @@ using Avalonia.Styling;
 using Esprima;
 using Esprima.Ast;
 using Jint;
-using OneWare.Shared.Enums;
-using OneWare.Shared.Models;
-using OneWare.Shared.Services;
+using OneWare.SDK.Enums;
+using OneWare.SDK.Models;
+using OneWare.SDK.Services;
 using Color = Avalonia.Media.Color;
 
 namespace OneWare.NetlistSvg.Services;

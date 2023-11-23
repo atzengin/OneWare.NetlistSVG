@@ -42,6 +42,5 @@ Global
 		SolutionGuid = {2F01758F-FFEA-408A-B6CF-7135800E934C}
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{123958C7-8BF6-43F2-BD3A-8AD304EBBF9B} = {66B7CCEF-7704-488B-BB9F-300E9516AFD0}
 	EndGlobalSection
 EndGlobal

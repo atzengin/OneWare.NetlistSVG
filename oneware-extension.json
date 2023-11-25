@@ -18,36 +18,33 @@
   ],
   "links": [
     {
+      "name": "Github",
+      "url": "https://github.com/ProtopSolutions/OneWare.NetlistSVG"
+    },
+    {
       "name": "NetlistSVG Github",
       "url": "https://github.com/nturley/netlistsvg"
     }
   ],
   "versions": [
     {
-      "version": "0.2",
-      "dependencies": [
-        {
-          "name": "OneWare.SDK",
-          "minVersion": "0.12.1.0",
-          "maxVersion": "0.12.1.0"
-        }
-      ],
+      "version": "0.3",
       "targets": [
         {
           "target": "win-x64",
-          "url": "https://github.com/ProtopSolutions/OneWare.NetlistSVG/releases/download/0.2/OneWare_NetlistSVGExtension_0.2_win-x64.zip"
+          "url": "https://github.com/ProtopSolutions/OneWare.NetlistSVG/releases/download/0.3/OneWare_NetlistSVGExtension_0.3_win-x64.zip"
         },
         {
           "target": "linux-x64",
-          "url": "https://github.com/ProtopSolutions/OneWare.NetlistSVG/releases/download/0.2/OneWare_NetlistSVGExtension_0.2_linux-x64.zip"
+          "url": "https://github.com/ProtopSolutions/OneWare.NetlistSVG/releases/download/0.3/OneWare_NetlistSVGExtension_0.3_linux-x64.zip"
         },
         {
           "target": "osx-x64",
-          "url": "https://github.com/ProtopSolutions/OneWare.NetlistSVG/releases/download/0.2/OneWare_NetlistSVGExtension_0.2_osx-x64.zip"
+          "url": "https://github.com/ProtopSolutions/OneWare.NetlistSVG/releases/download/0.3/OneWare_NetlistSVGExtension_0.3_osx-x64.zip"
         },
         {
           "target": "osx-arm64",
-          "url": "https://github.com/ProtopSolutions/OneWare.NetlistSVG/releases/download/0.2/OneWare_NetlistSVGExtension_0.2_osx-arm64.zip"
+          "url": "https://github.com/ProtopSolutions/OneWare.NetlistSVG/releases/download/0.3/OneWare_NetlistSVGExtension_0.3_osx-arm64.zip"
         }
       ]
     }

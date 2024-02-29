@@ -1,7 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using OneWare.NetlistSvg.Services;
-using OneWare.SDK.Models;
-using OneWare.SDK.Services;
+using OneWare.Essentials.Models;
+using OneWare.Essentials.Services;
+using OneWare.Essentials.ViewModels;
 using Prism.Ioc;
 using Prism.Modularity;
 
@@ -24,7 +25,7 @@ public class NetlistSvgModule : IModule
             {
                 return new[]
                 {
-                    new MenuItemModel("NetlistSvg")
+                    new MenuItemViewModel("NetlistSvg")
                     {
                         Header = "Convert to SVG",
                         Command = new AsyncRelayCommand(() => netListSvgService.ShowSchemeAsync(json))

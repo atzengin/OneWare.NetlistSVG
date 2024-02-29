@@ -5,9 +5,9 @@ using Avalonia.Styling;
 using Esprima;
 using Esprima.Ast;
 using Jint;
-using OneWare.SDK.Enums;
-using OneWare.SDK.Models;
-using OneWare.SDK.Services;
+using OneWare.Essentials.Enums;
+using OneWare.Essentials.Models;
+using OneWare.Essentials.Services;
 using Color = Avalonia.Media.Color;
 
 namespace OneWare.NetlistSvg.Services;
@@ -15,16 +15,16 @@ namespace OneWare.NetlistSvg.Services;
 public class NetlistSvgService
 {
     private readonly ILogger _logger;
-    private readonly IActive _active;
+    private readonly IApplicationStateService _applicationStateService;
     private readonly IDockService _dockService;
 
     private Script? _script1;
     private Script? _script2;
     
-    public NetlistSvgService(ILogger logger, IActive active, IDockService dockService)
+    public NetlistSvgService(ILogger logger, IApplicationStateService active, IDockService dockService)
     {
         _logger = logger;
-        _active = active;
+        _applicationStateService = active;
         _dockService = dockService;
 
         _ = LoadScriptsAsync();
@@ -74,7 +74,7 @@ public class NetlistSvgService
         _output = string.Empty;
 
         var cancel = new CancellationTokenSource();
-        var state = _active.AddState("Rendering Scheme...", AppState.Loading,  () => cancel.Cancel());
+        var state = _applicationStateService.AddState("Rendering Scheme...", AppState.Loading,  () => cancel.Cancel());
 
         var theme = Application.Current!.ActualThemeVariant;
         var skin = LoadSkin(theme);
@@ -149,7 +149,7 @@ public class NetlistSvgService
             return null;
         }
 
-        _active.RemoveState(state);
+        _applicationStateService.RemoveState(state);
         return cancel.IsCancellationRequested ? null : _output;
     }
 

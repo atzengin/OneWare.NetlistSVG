@@ -1,4 +1,4 @@
-![Icon](https://oneware.studio/img/slides/vhdl.png)
+![Icon](https://one-ware.com/img/studio/slides/vhdl.png)
 
 ## NetlistSVG Extension
 Includes [NetlistSVG](https://raw.githubusercontent.com/nturley/netlistsvg) v1.0.2

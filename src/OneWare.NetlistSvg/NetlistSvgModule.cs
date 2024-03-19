@@ -18,21 +18,17 @@ public class NetlistSvgModule : IModule
     public void OnInitialized(IContainerProvider containerProvider)
     {
         var netListSvgService = containerProvider.Resolve<NetlistSvgService>();
-        
-        containerProvider.Resolve<IProjectExplorerService>().RegisterConstructContextMenu(x =>
+
+        containerProvider.Resolve<IProjectExplorerService>().RegisterConstructContextMenu((x, l) =>
         {
-            if (x is [IProjectFile {Extension: ".json"} json])
+            if (x is [IProjectFile { Extension: ".json" } json])
             {
-                return new[]
+                l.Add(new MenuItemViewModel("NetlistSvg")
                 {
-                    new MenuItemViewModel("NetlistSvg")
-                    {
-                        Header = "Convert to SVG",
-                        Command = new AsyncRelayCommand(() => netListSvgService.ShowSchemeAsync(json))
-                    }
-                };
+                    Header = "Convert to SVG",
+                    Command = new AsyncRelayCommand(() => netListSvgService.ShowSchemeAsync(json))
+                });
             }
-            return null;
         });
     }
 }

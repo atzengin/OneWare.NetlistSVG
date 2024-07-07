@@ -18,8 +18,8 @@ public class NetlistSvgService
     private readonly IApplicationStateService _applicationStateService;
     private readonly IDockService _dockService;
 
-    private Script? _script1;
-    private Script? _script2;
+    private Prepared<Script>? _script1;
+    private Prepared<Script>? _script2;
     
     public NetlistSvgService(ILogger logger, IApplicationStateService active, IDockService dockService)
     {
@@ -37,9 +37,9 @@ public class NetlistSvgService
 
         var result = await Task.Run(() =>
         {
-            var c = new JavaScriptParser();
-            var c1 = c.ParseScript(script1);
-            var c2 = c.ParseScript(script2);
+            var c1 = Engine.PrepareScript(script1);
+            var c2 = Engine.PrepareScript(script2);
+            
             return (c1, c2);
         });
 
@@ -121,9 +121,9 @@ public class NetlistSvgService
                     };
                     timer.Start();
                 }));
-            
-                engine.Execute(_script1);
-                engine.Execute(_script2);
+                
+                engine.Execute(_script1.Value);
+                engine.Execute(_script2.Value);
             
                 engine.Execute("var netlistsvg = window.netlistsvg");
                 

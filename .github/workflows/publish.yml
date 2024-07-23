@@ -31,6 +31,8 @@ jobs:
         type: 'zip'
         filename: ../OneWare_NetlistSvgExtension_${{steps.get-version.outputs.version}}_all.zip
         directory: ./publish
+    - uses: Debug
+      run: ls
     - uses: ncipollo/release-action@v1.14.0
       with:
         artifacts: "OneWare_NetlistSvgExtension_${{steps.get-version.outputs.version}}_all.zip"

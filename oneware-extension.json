@@ -116,7 +116,7 @@
       "targets": [
         {
           "target": "all",
-          "url": "https://github.com/ProtopSolutions/OneWare.NetlistSVG/releases/download/0.5.2/OneWare.NetlistSvg_0.5.2_all.zip"
+          "url": "https://github.com/one-ware/OneWare.NetlistSVG/releases/download/0.5.2/OneWare.NetlistSvg_0.5.2_all.zip"
         }
       ]
     }

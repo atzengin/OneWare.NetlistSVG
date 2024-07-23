@@ -6,6 +6,9 @@ on:
     types:
       - published 
 
+permissions:
+  contents: write
+  
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -35,7 +38,7 @@ jobs:
       run: ls
     - uses: ncipollo/release-action@v1.14.0
       with:
-        artifacts: "*.*.zip"
+        artifacts: "OneWare_NetlistSvgExtension_${{steps.get-version.outputs.version}}_all.zip"
         tag: ${{steps.get-version.outputs.version}}
         allowUpdates: true
 

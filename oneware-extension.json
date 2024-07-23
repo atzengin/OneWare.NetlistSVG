@@ -110,6 +110,15 @@
           "url": "https://github.com/ProtopSolutions/OneWare.NetlistSVG/releases/download/0.5.1/OneWare_NetlistSVGExtension_0.5.1_osx-arm64.zip"
         }
       ]
+    },
+    {
+      "version": "0.5.2",
+      "targets": [
+        {
+          "target": "all",
+          "url": "https://github.com/ProtopSolutions/OneWare.NetlistSVG/releases/download/0.5.2/OneWare_NetlistSVGExtension_0.5.2_all.zip"
+        }
+      ]
     }
   ]
 }

@@ -8,10 +8,6 @@ on:
 
 jobs:
   build:
-    strategy:
-      matrix:
-        target: ["win-x64", "linux-x64", "osx-x64", "osx-arm64"]
-        
     runs-on: ubuntu-latest
     
     steps:
@@ -27,38 +23,16 @@ jobs:
       id: get-version
       with:
         proj-path: src/OneWare.NetlistSvg/OneWare.NetlistSvg.csproj
-    - name: Build ${{ matrix.target }}
-      run: dotnet build src/OneWare.NetlistSvg/OneWare.NetlistSvg.csproj -c Release -r ${{ matrix.target }} -o publish
-    - name: Compress ${{ matrix.target }}
+    - name: Build
+      run: dotnet build src/OneWare.NetlistSvg/OneWare.NetlistSvg.csproj -c Release -o publish
+    - name: Compress
       uses: thedoctor0/zip-release@0.7.1
       with:
         type: 'zip'
-        filename: ../OneWare_NetlistSvgExtension_${{steps.get-version.outputs.version}}_${{ matrix.target }}.zip
+        filename: ../OneWare_NetlistSvgExtension_${{steps.get-version.outputs.version}}_all.zip
         directory: ./publish
-    - uses: actions/upload-artifact@v3
+    - uses: ncipollo/release-action@v1
       with:
-        name: OneWare_NetlistSvgExtension_${{ matrix.target }}
-        if-no-files-found: error
-        retention-days: 5
-        path: ./OneWare_NetlistSvgExtension_${{steps.get-version.outputs.version}}_${{ matrix.target }}.zip
-        
-  release:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    needs: [ build ]
-    steps:
-      - uses: actions/checkout@v3
-      - name: Get Version
-        uses: kzrnm/get-net-sdk-project-versions-action@v1.3.0
-        id: get-version
-        with:
-          proj-path: src/OneWare.NetlistSvg/OneWare.NetlistSvg.csproj
-      - uses: actions/download-artifact@v3
-        with:
-          path: ./artifacts
-      - uses: ncipollo/release-action@v1
-        with:
-          artifacts: "artifacts/**/*.zip"
-          tag: ${{steps.get-version.outputs.version}}
-          allowUpdates: true
+        artifacts: ./OneWare_NetlistSvgExtension_${{steps.get-version.outputs.version}}_all.zip
+        tag: ${{steps.get-version.outputs.version}}
+        allowUpdates: true

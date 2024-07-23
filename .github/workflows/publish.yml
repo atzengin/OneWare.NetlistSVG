@@ -29,10 +29,10 @@ jobs:
       uses: thedoctor0/zip-release@0.7.1
       with:
         type: 'zip'
-        filename: OneWare_NetlistSvgExtension_${{steps.get-version.outputs.version}}_all.zip
+        filename: ../OneWare_NetlistSvgExtension_${{steps.get-version.outputs.version}}_all.zip
         directory: ./publish
     - uses: ncipollo/release-action@v1
       with:
-        artifacts: OneWare_NetlistSvgExtension_${{steps.get-version.outputs.version}}_all.zip
+        artifacts: "OneWare_NetlistSvgExtension_${{steps.get-version.outputs.version}}_all.zip"
         tag: ${{steps.get-version.outputs.version}}
         allowUpdates: true

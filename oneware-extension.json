@@ -44,6 +44,15 @@
           "url": "https://github.com/one-ware/OneWare.NetlistSVG/releases/download/0.6.0/OneWare.NetlistSvg_0.6.0_all.zip"
         }
       ]
+    },
+    {
+      "version": "0.7.0",
+      "targets": [
+        {
+          "target": "all",
+          "url": "https://github.com/one-ware/OneWare.NetlistSVG/releases/download/0.7.0/OneWare.NetlistSvg_0.7.0_all.zip"
+        }
+      ]
     }
   ]
 }

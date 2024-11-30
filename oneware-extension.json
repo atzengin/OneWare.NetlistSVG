@@ -26,31 +26,13 @@
       "url": "https://github.com/nturley/netlistsvg"
     }
   ],
+  "sourceUrl": "https://github.com/one-ware/OneWare.NetlistSVG/releases/download",
   "versions": [
     {
-      "version": "0.5.2",
+      "version": "0.8.0",
       "targets": [
         {
-          "target": "all",
-          "url": "https://github.com/one-ware/OneWare.NetlistSVG/releases/download/0.5.2/OneWare.NetlistSvg_0.5.2_all.zip"
-        }
-      ]
-    },
-    {
-      "version": "0.6.0",
-      "targets": [
-        {
-          "target": "all",
-          "url": "https://github.com/one-ware/OneWare.NetlistSVG/releases/download/0.6.0/OneWare.NetlistSvg_0.6.0_all.zip"
-        }
-      ]
-    },
-    {
-      "version": "0.7.0",
-      "targets": [
-        {
-          "target": "all",
-          "url": "https://github.com/one-ware/OneWare.NetlistSVG/releases/download/0.7.0/OneWare.NetlistSvg_0.7.0_all.zip"
+          "target": "all"
         }
       ]
     }

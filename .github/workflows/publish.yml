@@ -32,11 +32,9 @@ jobs:
         type: 'zip'
         filename: ../OneWare.NetlistSvg_${{steps.get-version.outputs.version}}_all.zip
         directory: ./publish
-    - name: Debug
-      run: ls
     - uses: ncipollo/release-action@v1.14.0
       with:
-        artifacts: "OneWare.NetlistSvg_${{steps.get-version.outputs.version}}_all.zip"
+        artifacts: "OneWare.NetlistSvg_${{steps.get-version.outputs.version}}_all.zip,./publish/compatibility.txt"
         tag: ${{steps.get-version.outputs.version}}
         allowUpdates: true
 

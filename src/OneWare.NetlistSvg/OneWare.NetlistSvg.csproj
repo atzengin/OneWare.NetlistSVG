@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <Version>0.7.0</Version>
-        <TargetFramework>net8.0</TargetFramework>
+        <Version>0.8.0</Version>
+        <TargetFramework>net9.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <EnableDynamicLoading>true</EnableDynamicLoading>
@@ -11,12 +11,22 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Content Include="oneware.json" CopyToOutputDirectory="PreserveNewest"/>
         <AvaloniaResource Include="Assets\**\*.*" />
     </ItemGroup>
     
     <ItemGroup>
-        <PackageReference Include="OneWare.Essentials" Version="0.9.0" Private="false" ExcludeAssets="runtime;Native" />
+        <PackageReference Include="OneWare.Essentials" Version="0.11.2" Private="false" ExcludeAssets="runtime;Native" />
     </ItemGroup>
+    
+    <Target Name="GenerateCompatibilityFile" AfterTargets="Build">
+        <ItemGroup>
+            <FilteredDependencies Include="@(PackageReference)" Condition="'%(Private)' == 'false'" />
+        </ItemGroup>
+
+        <WriteLinesToFile
+                File="$(OutDir)compatibility.txt"
+                Lines="@(FilteredDependencies->'%(Identity) : %(Version)')"
+                Overwrite="true" />
+    </Target>
     
 </Project>

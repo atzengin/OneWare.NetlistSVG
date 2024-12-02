@@ -52,10 +52,10 @@ public class NetlistSvgService
         
         if (!string.IsNullOrEmpty(svgStr))
         {
-           
             var newFileName = Path.GetFileNameWithoutExtension(jsonFile.FullPath) + ".svg";
-            var newFile = jsonFile.TopFolder!.AddFile(newFileName, true);
-            await File.WriteAllTextAsync(newFile.FullPath, svgStr);
+            var newFilePath = Path.Combine(Path.GetDirectoryName(jsonFile.FullPath)!, newFileName);
+            await File.WriteAllTextAsync(newFilePath, svgStr);
+            var newFile = jsonFile.TopFolder!.AddFile(newFileName);
             await _dockService.OpenFileAsync(newFile);
         }
     }
